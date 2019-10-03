@@ -13,11 +13,13 @@ const geocode = (latitude, longitude, callback) => {
     } else if (body.error) {
       callback('Unable to fetch forecast for location.', undefined);
     } else {
-      const temperature = body.currently.temperature;
-      const precpProb = body.currently.precipProbability;
+      const currTemp = body.currently.temperature;
+      const minTemp = body.daily.data[0].temperatureMin;
+      const maxTemp = body.daily.data[0].temperatureMax;
+      const precpProb = body.daily.data[0].precipProbability * 100;
       const summary = body.daily.data[0].summary;
 
-      const forecastString = summary + ` It is currently ${temperature}°C out. There is a ${precpProb}% chance of rain.`;
+      const forecastString = summary + ` It is currently ${currTemp}°C out.\nThere is a ${precpProb}% chance of rain today, with temperatures ranging from ${minTemp}°C to ${maxTemp}°C.`;
 
       callback(undefined, forecastString);
     }
