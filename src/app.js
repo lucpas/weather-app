@@ -29,7 +29,7 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: 'About Me',
+    title: 'About',
     name: 'lucpas'
   });
 });
@@ -38,7 +38,7 @@ app.get('/help', (req, res) => {
   res.render('help', {
     title: 'Help',
     name: 'lucpas',
-    message: 'A help message'
+    message: 'Have you tried turning it off and on again?'
   });
 });
 

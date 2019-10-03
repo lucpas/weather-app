@@ -12,7 +12,11 @@
 
     <div class="main-content">
         {{>header}}
-        <img class="portrait" src="/img/robot.png" alt="">
+        <p>This small app was created by Pascal Luckhaus as part of a <a href="https://www.udemy.com/course/the-complete-nodejs-developer-course-2/">Udemy course</a> on Node.js</p>
+
+        <p>It was built using the node packages express, request and the handlebars templating engine.</p>
+        <p>User input is mapped to geocoordinates using mapbox.com and then fed to darksky.com, which provides the weather data.</p>
+        {{!-- <img class="portrait" src="/img/robot.png" alt=""> --}}
     </div>
 
     {{>footer}}
